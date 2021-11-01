@@ -33,25 +33,25 @@ unwrapISO :: ISO -> DateTime
 unwrapISO = unwrap
 
 instance showISO :: Show ISO where
-    show (ISO (DateTime date time)) = foldl append ""
-        [ showInt $ DT.year date
-        , "-"
-        , padl 2 '0' $ showInt $ DT.month date
-        , "-"
-        , padl 2 '0' $ showInt $ DT.day date
-        , "T"
-        , padl 2 '0' $ showInt $ DT.hour time
-        , ":"
-        , padl 2 '0' $ showInt $ DT.minute time
-        , ":"
-        , padl 2 '0' $ showInt $ DT.second time
-        , "."
-        , removeTrailingZeros $ padMilli $ DT.millisecond time
-        , "Z"
-        ]
-        where
-            showInt :: forall a. BoundedEnum a => a -> String
-            showInt = show <<< fromEnum
+  show (ISO (DateTime date time)) = foldl append ""
+    [ showInt $ DT.year date
+    , "-"
+    , padl 2 '0' $ showInt $ DT.month date
+    , "-"
+    , padl 2 '0' $ showInt $ DT.day date
+    , "T"
+    , padl 2 '0' $ showInt $ DT.hour time
+    , ":"
+    , padl 2 '0' $ showInt $ DT.minute time
+    , ":"
+    , padl 2 '0' $ showInt $ DT.second time
+    , "."
+    , removeTrailingZeros $ padMilli $ DT.millisecond time
+    , "Z"
+    ]
+    where
+    showInt :: forall a. BoundedEnum a => a -> String
+    showInt = show <<< fromEnum
 
 -- | Pad an integer from a millisecond value with enough zeros so it is three
 -- digits.
@@ -62,65 +62,70 @@ padMilli = padl 3 '0' <<< show <<< fromEnum
 removeTrailingZeros :: String -> String
 removeTrailingZeros "000" = "0"
 removeTrailingZeros s =
-  fromCodePointArray <<<
-  Array.reverse <<<
-  Array.dropWhile (_ == codePointFromChar '0') <<<
-  Array.reverse $
-  toCodePointArray s
+  fromCodePointArray
+    <<< Array.reverse
+    <<< Array.dropWhile (_ == codePointFromChar '0')
+    <<<
+      Array.reverse $
+    toCodePointArray s
 
 instance decodeJsonISO :: DecodeJson ISO where
-    decodeJson = decodeJson
-             >=> flip P.runParser (parseISO :: P.Parser String ISO)
-             >>> lmap P.parseErrorMessage
+  decodeJson = decodeJson
+    >=> flip P.runParser (parseISO :: P.Parser String ISO)
+      >>> lmap P.parseErrorMessage
 
 instance encodeJsonISO :: EncodeJson ISO where
-    encodeJson = show >>> encodeJson
+  encodeJson = show >>> encodeJson
 
 --------------------------------------------------------------------------------
 
 parseISO :: forall s m. Monad m => PS.StringLike s => P.ParserT s m ISO
 parseISO = do
-    date <- parseISODate
-    _ <- PS.char 'T'
-    time <- parseISOTime
-    pure $ wrap $ DateTime date time
+  date <- parseISODate
+  _ <- PS.char 'T'
+  time <- parseISOTime
+  pure $ wrap $ DateTime date time
 
 parseISODate :: forall s m. Monad m => PS.StringLike s => P.ParserT s m Date
 parseISODate = do
-    year  <- parseDigits 4 <#> toEnum >>= maybeFail "bad year"
-    _     <- dash
-    month <- parseDigits 2 <#> toEnum >>= maybeFail "bad month"
-    _     <- dash
-    day   <- parseDigits 2 <#> toEnum >>= maybeFail "bad day"
-    DT.exactDate year month day # maybeFail "bad date"
+  year <- parseDigits 4 <#> toEnum >>= maybeFail "bad year"
+  _ <- dash
+  month <- parseDigits 2 <#> toEnum >>= maybeFail "bad month"
+  _ <- dash
+  day <- parseDigits 2 <#> toEnum >>= maybeFail "bad day"
+  DT.exactDate year month day # maybeFail "bad date"
 
-    where dash  = PC.optional $ PC.try $ PS.char '-'
+  where
+  dash = PC.optional $ PC.try $ PS.char '-'
 
 parseISOTime :: forall s m. Monad m => PS.StringLike s => P.ParserT s m Time
 parseISOTime = do
-    hh <- parseDigits 2 <#> toEnum >>= maybeFail "bad hour"
-    _  <- colon
-    mm <- parseDigits 2 <#> toEnum >>= maybeFail "bad minute"
-    _  <- colon
-    ss <- parseDigits 2 <#> toEnum >>= maybeFail "bad second"
-    -- NOTE: milliseconds may not be present
-    ms <- PC.option bottom $
-                PC.try (PS.char '.') *> Array.some parseDigit <#> doMilli
-    pure $ DT.Time hh mm ss ms
-    where
-        colon = PC.optional $ PC.try $ PS.char ':'
+  hh <- parseDigits 2 <#> toEnum >>= maybeFail "bad hour"
+  _ <- colon
+  mm <- parseDigits 2 <#> toEnum >>= maybeFail "bad minute"
+  _ <- colon
+  ss <- parseDigits 2 <#> toEnum >>= maybeFail "bad second"
+  -- NOTE: milliseconds may not be present
+  ms <- PC.option bottom $
+    PC.try (PS.char '.') *> Array.some parseDigit <#> doMilli
+  pure $ DT.Time hh mm ss ms
+  where
+  colon = PC.optional $ PC.try $ PS.char ':'
 
 -- | Parse an array of three integers into a `Millisecond` value.
 doMilli :: Array Int -> Millisecond
 doMilli ns =
-  let padded = Array.take 3 $ ns <> Array.replicate (3 - length ns) 0
-  in fromMaybe top $ toEnum $ foldDigits padded
+  let
+    padded = Array.take 3 $ ns <> Array.replicate (3 - length ns) 0
+  in
+    fromMaybe top $ toEnum $ foldDigits padded
 
 parseDigits :: forall s m. Monad m => PS.StringLike s => Int -> P.ParserT s m Int
 parseDigits = map foldDigits <<< sequence <<< flip Array.replicate parseDigit
 
 parseDigit :: forall s m. Monad m => PS.StringLike s => P.ParserT s m Int
-parseDigit = PC.choice
+parseDigit =
+  PC.choice
     [ PS.char '0' *> pure 0
     , PS.char '1' *> pure 1
     , PS.char '2' *> pure 2
@@ -143,9 +148,9 @@ maybeFail str = maybe (P.fail str) pure
 
 padl :: Int -> Char -> String -> String
 padl n chr str = String.fromCharArray $
-    padl' (n - String.length str) chr (String.toCharArray str)
+  padl' (n - String.length str) chr (String.toCharArray str)
 
 padl' :: Int -> Char -> Array Char -> Array Char
 padl' n chr chrs
-    | n <= 0 = chrs
-    | otherwise = padl' (n - 1) chr (chr `Array.cons` chrs)
+  | n <= 0 = chrs
+  | otherwise = padl' (n - 1) chr (chr `Array.cons` chrs)
