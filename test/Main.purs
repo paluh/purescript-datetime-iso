@@ -2,18 +2,19 @@ module Test.Main where
 
 import Prelude
 
+import Control.Monad.Error.Class (class MonadThrow)
 import Data.Argonaut.Core (fromString)
 import Data.Argonaut.Decode (decodeJson)
 import Data.DateTime as DT
-import Data.DateTime.ISO (ISO(..), unwrapISO)
+import Data.DateTime.ISO (ISO(..))
 import Data.Either (Either(..))
 import Data.Enum (class BoundedEnum, toEnum)
 import Data.Maybe (fromJust)
 import Effect (Effect)
-import Effect.Aff (launchAff_)
+import Effect.Aff (Error, launchAff_)
 import Partial.Unsafe (unsafePartial)
 import Test.Spec (describe, it)
-import Test.Spec.Assertions (fail, shouldEqual)
+import Test.Spec.Assertions (expectError, shouldEqual)
 import Test.Spec.Reporter.Console (consoleReporter)
 import Test.Spec.Runner (runSpec)
 
@@ -24,112 +25,48 @@ main = launchAff_ $ runSpec [ consoleReporter ] do
     describe "decoding" do
 
       it "decodes standard js ISO strings (ala Date.prototype.toISOString)" do
-        case decodeISO "2018-01-09T13:16:43.772Z" of
-          Left err ->
-            fail $ "decoding failed: " <> err
-          Right iso ->
-            unwrapISO iso `shouldEqual`
-              mkDateTime 2018 DT.January 9 13 16 43 772
+        checkRoundtrip "2018-01-09T13:16:43.772Z" "2018-01-09T13:16:43.772Z"
 
       describe "optional characters" do
-
         it "doesn't need hyphens in the date" do
-          case decodeISO "20180109T13:16:43.772Z" of
-            Left err ->
-              fail $ "decoding failed: " <> err
-            Right iso ->
-              unwrapISO iso `shouldEqual`
-                mkDateTime 2018 DT.January 9 13 16 43 772
+          checkRoundtrip "20180109T13:16:43.772Z" "2018-01-09T13:16:43.772Z"
 
         it "doesn't need colons in the time" do
-          case decodeISO "20180109T131643.772Z" of
-            Left err ->
-              fail $ "decoding failed: " <> err
-            Right iso ->
-              unwrapISO iso `shouldEqual`
-                mkDateTime 2018 DT.January 9 13 16 43 772
+          checkRoundtrip "20180109T131643.772Z" "2018-01-09T13:16:43.772Z"
 
       describe "milliseconds" do
 
         it "handles zero milliseconds" do
-          case decodeISO "2018-01-09T13:16:43.0Z" of
-            Left err ->
-              fail $ "decoding failed: " <> err
-            Right iso ->
-              unwrapISO iso `shouldEqual`
-                mkDateTime 2018 DT.January 9 13 16 43 0
+          checkRoundtrip "2018-01-09T13:16:43.0Z" "2018-01-09T13:16:43.0Z"
 
         it "handles empty milliseconds" do
-          case decodeISO "2018-01-09T13:16:43Z" of
-            Left err ->
-              fail $ "decoding failed: " <> err
-            Right iso ->
-              unwrapISO iso `shouldEqual`
-                mkDateTime 2018 DT.January 9 13 16 43 0
+          checkRoundtrip "2018-01-09T13:16:43Z" "2018-01-09T13:16:43.0Z"
 
         it "handles milliseconds 0-999" do
-          case decodeISO "2018-01-09T13:16:43.999Z" of
-            Left err ->
-              fail $ "decoding failed: " <> err
-            Right iso ->
-              unwrapISO iso `shouldEqual`
-                mkDateTime 2018 DT.January 9 13 16 43 999
+          checkRoundtrip "2018-01-09T13:16:43.999Z" "2018-01-09T13:16:43.999Z"
 
         it "handles more than 3 digits second fraction" do
-          case decodeISO "2018-01-09T13:16:43.1234Z" of
-            Left err ->
-              fail $ "decoding failed: " <> err
-            Right iso ->
-              show iso `shouldEqual`
-                "2018-01-09T13:16:43.123Z"
+          checkRoundtrip "2018-01-09T13:16:43.1234Z" "2018-01-09T13:16:43.123Z"
 
         it "handles milliseconds with one leading zero" do
-          case decodeISO "2018-01-09T03:16:43.034Z" of
-            Left err ->
-              fail $ "decoding failed: " <> err
-            Right iso ->
-              unwrapISO iso `shouldEqual`
-                mkDateTime 2018 DT.January 9 3 16 43 34
+          checkRoundtrip "2018-01-09T03:16:43.034Z" "2018-01-09T03:16:43.034Z"
 
         it "handles milliseconds with two leading zeros" do
-          case decodeISO "2018-01-09T13:06:33.002Z" of
-            Left err ->
-              fail $ "decoding failed: " <> err
-            Right iso ->
-              show iso `shouldEqual`
-                "2018-01-09T13:06:33.002Z"
+          checkRoundtrip "2018-01-09T13:06:33.002Z" "2018-01-09T13:06:33.002Z"
 
         it "handles two digit milliseconds with leading zero" do
-          case decodeISO "2018-01-09T13:26:03.07Z" of
-            Left err ->
-              fail $ "decoding failed: " <> err
-            Right iso ->
-              show iso `shouldEqual`
-                "2018-01-09T13:26:03.07Z"
+          checkRoundtrip "2018-01-09T13:26:03.07Z" "2018-01-09T13:26:03.07Z"
 
         it "handles two digit milliseconds with leading and trailing zero" do
-          case decodeISO "2018-01-09T13:06:03.070Z" of
-            Left err ->
-              fail $ "decoding failed: " <> err
-            Right iso ->
-              show iso `shouldEqual`
-                "2018-01-09T13:06:03.07Z"
+          checkRoundtrip "2018-01-09T13:06:03.070Z" "2018-01-09T13:06:03.07Z"
 
       describe "malformed input" do -- malformed as far as we're concerned...
 
         it "fails if not YYYY MM DD" do
-          case decodeISO "2018-1-9T13:16:43.1Z" of
-            Left err -> do
-              pure unit
-            Right _ ->
-              fail "shouldn't have parsed"
+          expectError $ checkRoundtrip "2018-1-9T13:16:43.1Z" "2018-1-9T13:16:43.1Z"
 
         it "requires a terminating 'Z' (UTC)" do
-          case decodeISO "2018-1-9T13:16:43.0" of
-            Left err -> do
-              pure unit
-            Right _ ->
-              fail "shouldn't have parsed"
+          expectError $ checkRoundtrip "2018-1-9T13:16:43.0" "2018-1-9T13:16:43.1Z"
 
     describe "printing" do
 
@@ -153,8 +90,9 @@ main = launchAff_ $ runSpec [ consoleReporter ] do
         let dt = mkDateTime 2018 DT.January 9 13 16 43 840
         show (ISO dt) `shouldEqual` "2018-01-09T13:16:43.84Z"
 
-decodeISO :: String -> Either String ISO
-decodeISO = fromString >>> decodeJson
+checkRoundtrip :: forall m. MonadThrow Error m => String -> String -> m Unit
+checkRoundtrip value expected =
+  (map show $ (decodeJson $ fromString value :: _ _ ISO)) `shouldEqual` Right expected
 
 -- Helper function for constructing DateTimes.
 mkDateTime

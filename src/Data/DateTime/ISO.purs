@@ -2,8 +2,8 @@ module Data.DateTime.ISO (ISO(..), unwrapISO) where
 
 import Prelude
 
-import Data.Argonaut.Decode (class DecodeJson, decodeJson)
-import Data.Argonaut.Encode (class EncodeJson, encodeJson)
+import Data.Argonaut (class DecodeJson, class EncodeJson, JsonDecodeError(..), encodeJson)
+import Data.Argonaut.Decode.Decoders (decodeString)
 import Data.Array as Array
 import Data.Bifunctor (lmap)
 import Data.DateTime (DateTime(..), Date, Millisecond, Time)
@@ -16,7 +16,6 @@ import Data.String (fromCodePointArray, codePointFromChar, toCodePointArray)
 import Data.String (length) as String
 import Data.String.CodeUnits (fromCharArray, toCharArray) as String
 import Data.Traversable (sequence)
-
 import Text.Parsing.Parser as P
 import Text.Parsing.Parser.Combinators as PC
 import Text.Parsing.Parser.String as PS
@@ -70,23 +69,24 @@ removeTrailingZeros s =
     toCodePointArray s
 
 instance decodeJsonISO :: DecodeJson ISO where
-  decodeJson = decodeJson
-    >=> flip P.runParser (parseISO :: P.Parser String ISO)
-      >>> lmap P.parseErrorMessage
+  decodeJson json = do
+    string <- decodeString json
+    lmap (TypeMismatch <<< (append "ISO-formatted date-time: ") <<< P.parseErrorMessage)
+      $ P.runParser string parseISO
 
 instance encodeJsonISO :: EncodeJson ISO where
   encodeJson = show >>> encodeJson
 
 --------------------------------------------------------------------------------
 
-parseISO :: forall s m. Monad m => PS.StringLike s => P.ParserT s m ISO
+parseISO :: forall m. Monad m => P.ParserT String m ISO
 parseISO = do
   date <- parseISODate
   _ <- PS.char 'T'
   time <- parseISOTime
   pure $ wrap $ DateTime date time
 
-parseISODate :: forall s m. Monad m => PS.StringLike s => P.ParserT s m Date
+parseISODate :: forall m. Monad m => P.ParserT String m Date
 parseISODate = do
   year <- parseDigits 4 <#> toEnum >>= maybeFail "bad year"
   _ <- dash
@@ -98,7 +98,7 @@ parseISODate = do
   where
   dash = PC.optional $ PC.try $ PS.char '-'
 
-parseISOTime :: forall s m. Monad m => PS.StringLike s => P.ParserT s m Time
+parseISOTime :: forall m. Monad m => P.ParserT String m Time
 parseISOTime = do
   hh <- parseDigits 2 <#> toEnum >>= maybeFail "bad hour"
   _ <- colon
@@ -120,10 +120,10 @@ doMilli ns =
   in
     fromMaybe top $ toEnum $ foldDigits padded
 
-parseDigits :: forall s m. Monad m => PS.StringLike s => Int -> P.ParserT s m Int
+parseDigits :: forall m. Monad m => Int -> P.ParserT String m Int
 parseDigits = map foldDigits <<< sequence <<< flip Array.replicate parseDigit
 
-parseDigit :: forall s m. Monad m => PS.StringLike s => P.ParserT s m Int
+parseDigit :: forall m. Monad m => P.ParserT String m Int
 parseDigit =
   PC.choice
     [ PS.char '0' *> pure 0
@@ -143,7 +143,7 @@ parseDigit =
 foldDigits :: forall f. Foldable f => f Int -> Int
 foldDigits = foldl (\acc d -> acc * 10 + d) zero
 
-maybeFail :: forall m s a. Monad m => String -> Maybe a -> P.ParserT s m a
+maybeFail :: forall m a. Monad m => String -> Maybe a -> P.ParserT String m a
 maybeFail str = maybe (P.fail str) pure
 
 padl :: Int -> Char -> String -> String
