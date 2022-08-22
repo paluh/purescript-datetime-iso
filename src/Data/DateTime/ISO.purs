@@ -16,9 +16,9 @@ import Data.String (fromCodePointArray, codePointFromChar, toCodePointArray)
 import Data.String (length) as String
 import Data.String.CodeUnits (fromCharArray, toCharArray) as String
 import Data.Traversable (sequence)
-import Text.Parsing.Parser as P
-import Text.Parsing.Parser.Combinators as PC
-import Text.Parsing.Parser.String as PS
+import Parsing as P
+import Parsing.Combinators as PC
+import Parsing.String as PS
 
 -- | A minimal `DateTime` wrapper that encodes/decodes to/from the *simplified*
 -- | extended ISO format ([`ISO 8601`](https://en.wikipedia.org/wiki/ISO_8601)).
