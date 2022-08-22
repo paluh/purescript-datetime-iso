@@ -7,11 +7,11 @@ let
 
     "aff" = pkgs.stdenv.mkDerivation {
         name = "aff";
-        version = "v6.0.0";
+        version = "v7.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript-contrib/purescript-aff.git";
-          rev = "d0eb009f2f47cb1f5ba1d8592d90c95e8e7ff75d";
-          sha256 = "1780sgqyvbdgh8ynxmxn5d44vvhaz7kn9sv3l44c2s9q8xfjkfgm";
+          rev = "2d44d9f9d0d6a416a4103fba2fb39e5160f80e36";
+          sha256 = "1d38l16s8hvfqq5w40w21j5089svdiggkraw3rwrl6ml7lijjqx4";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -19,11 +19,11 @@ let
 
     "ansi" = pkgs.stdenv.mkDerivation {
         name = "ansi";
-        version = "v6.1.0";
+        version = "v7.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/hdgarrood/purescript-ansi.git";
-          rev = "e89e6fede616bd16b001841cf30ac320c95313a6";
-          sha256 = "1jsll0h7nz13zgscs036cnkkc6frnlcnk6fwjdwsyp6wbmjri2zm";
+          rev = "7d898732d643a977a78004851112a4417909e126";
+          sha256 = "1aml84m5p1s14kj29m39182byg44nf275p4cinx3kgwhv1gj0qcp";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -31,11 +31,11 @@ let
 
     "argonaut" = pkgs.stdenv.mkDerivation {
         name = "argonaut";
-        version = "v8.0.0";
+        version = "v9.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript-contrib/purescript-argonaut.git";
-          rev = "e5137df76065c14e5de70c4e2820222bd7c78fc2";
-          sha256 = "05sq1102rl1phm2gadx0gp966yvk9q1r492bb30q1m0nz762q4v2";
+          rev = "7505a47f2edb0c9cacaac4f11dcedf4723a3e9c8";
+          sha256 = "18yxhlrwri6q858krz1klyq29fx8nvfm16c04wm2rn91mgyasn6x";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -43,11 +43,11 @@ let
 
     "argonaut-codecs" = pkgs.stdenv.mkDerivation {
         name = "argonaut-codecs";
-        version = "v8.1.0";
+        version = "v9.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript-contrib/purescript-argonaut-codecs.git";
-          rev = "b0a041d92bfd548e2cd793cc7c02363464325a13";
-          sha256 = "11vmlq98s4jmg5grvdrrlfkqj9vk3la44ky8158a440ipcpinjkq";
+          rev = "176a5dddae28fda9a2ff31ed4bf1efcc148513a4";
+          sha256 = "08ys445222syysxh24la8bc8l20lwwqi4vdfa3ph2a60l1lx3kp8";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -55,11 +55,11 @@ let
 
     "argonaut-core" = pkgs.stdenv.mkDerivation {
         name = "argonaut-core";
-        version = "v6.0.0";
+        version = "v7.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript-contrib/purescript-argonaut-core.git";
-          rev = "673971dee79667882a83f9fda7097e50530726f1";
-          sha256 = "13ka4xybc8ql54xlkkhy4919nnapfigdlk51ja85f8xwhr64x9kq";
+          rev = "68da81dd80ec36d3b013eff46dc067a972c22e5d";
+          sha256 = "0hxl17ddbflkk0hchjgk5xj6j9fwp3b182w4g073p0dwscdl4f08";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -67,11 +67,11 @@ let
 
     "argonaut-traversals" = pkgs.stdenv.mkDerivation {
         name = "argonaut-traversals";
-        version = "v9.0.0";
+        version = "v10.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript-contrib/purescript-argonaut-traversals.git";
-          rev = "36f2e368ceea1ed681bd8e2884eaca451945fc44";
-          sha256 = "0bj88s7rz50jfhyawq4h97lvbr3h7pksbqnz4lmh714f5fda6ncx";
+          rev = "8d2403d8d57afb568933dbb36063d5670ce770a0";
+          sha256 = "0v965bcl1hdp1hacbzxcm35kxxclixj0kpsdm816gs7m548z6l43";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -79,11 +79,11 @@ let
 
     "arrays" = pkgs.stdenv.mkDerivation {
         name = "arrays";
-        version = "v6.0.1";
+        version = "v7.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-arrays.git";
-          rev = "c0aa3176b077ad7a46b11ef34487485c28142e53";
-          sha256 = "0lm0m5hapimchzgfywr648pkw1hpggr6qibh8d19p2impbnc94c0";
+          rev = "d20bae2f76db6cf29b7b75e26e82b8a54c32295e";
+          sha256 = "1ciz796yrdfnqiskjjhh6r3bn9mks1dm5zin7kwzh1nfy1i4w9pz";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -91,11 +91,11 @@ let
 
     "avar" = pkgs.stdenv.mkDerivation {
         name = "avar";
-        version = "v4.0.0";
+        version = "v5.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript-contrib/purescript-avar.git";
-          rev = "ac3cbbb8d4b71ff19a78a3178355c089e44d3b4d";
-          sha256 = "005046wl61w6r5v3qwd16srhcx82vdz3yvp4xzad2xaasb6iq55l";
+          rev = "d00f5784d9cc8f079babd62740f5c52b87e5caa5";
+          sha256 = "132g0ccmjr8328xpaycww8b5wmx1vi3li4irxxqcjk5wi47i8c9h";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -103,11 +103,11 @@ let
 
     "bifunctors" = pkgs.stdenv.mkDerivation {
         name = "bifunctors";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-bifunctors.git";
-          rev = "a31d0fc4bbebf19d5e9b21b65493c28b8d3fba62";
-          sha256 = "0xc2hf8ccdgqw3m9qcmr38kmzv05fsxvakd07wyrqshvkzg3xn0d";
+          rev = "16ba2fb6dd7f05528ebd9e2f9ca3a068b325e5b3";
+          sha256 = "1qz5aaiq5w4g1rhjb63z47h6nqhw8hw23x1zw5alam047pq4vfkg";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -115,11 +115,11 @@ let
 
     "catenable-lists" = pkgs.stdenv.mkDerivation {
         name = "catenable-lists";
-        version = "v6.0.1";
+        version = "v7.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-catenable-lists.git";
-          rev = "ee03395f2c5d59a7fd8529a0faac6ec1ebcbb682";
-          sha256 = "1lz06fx0za5sl65wccn5fl37mw3x4jnvrriz1gg0aqsmm9lag7ss";
+          rev = "09abe1f4888bc00841ad2b59e56a9e7ce7ebd4ab";
+          sha256 = "0fn6caspdnb0nrlj31sy7d5hxrhndfz7a2b9wfkxf5bv5vpjyawb";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -127,11 +127,11 @@ let
 
     "console" = pkgs.stdenv.mkDerivation {
         name = "console";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-console.git";
-          rev = "d7cb69ef8fed8a51466afe1b623868bb29e8586e";
-          sha256 = "0fzzzqjgrz33pb2jf7cdqpg09ilxb7bsrc7sbfq52wjg0sx9aq6g";
+          rev = "3b83d7b792d03872afeea5e62b4f686ab0f09842";
+          sha256 = "0fr5l1myhscp910mybp04cg6g8f2hy3ikjfc8fkqlb2dm2cqzdfs";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -139,11 +139,11 @@ let
 
     "const" = pkgs.stdenv.mkDerivation {
         name = "const";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-const.git";
-          rev = "3a3a4bdc44f71311cf27de9bd22039b110277540";
-          sha256 = "0aq9qjbrvf8mf8hmas6imv4mg6n3zi13hkf449ns1hn12lw8qv4g";
+          rev = "ab9570cf2b6e67f7e441178211db1231cfd75c37";
+          sha256 = "0mcpwqqf5bcwxlzk53smvsjjz1ymlnq0ypphg6sc83ibw70g64f6";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -151,11 +151,11 @@ let
 
     "contravariant" = pkgs.stdenv.mkDerivation {
         name = "contravariant";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-contravariant.git";
-          rev = "ae1a765f7ddbfd96ae1f12e399e46d554d8e3b38";
-          sha256 = "029hb8i3n4759x4gc06wkfgr7wim5x1w5jy2bsiy42n0g731h5qc";
+          rev = "9ad3e105b8855bcc25f4e0893c784789d05a58de";
+          sha256 = "1xkd3rfs8v20w7mj6sj6dmhfb2vb1zpmjv245xj1rahk3g16qm7m";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -163,11 +163,11 @@ let
 
     "control" = pkgs.stdenv.mkDerivation {
         name = "control";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-control.git";
-          rev = "18d582e311f1f8523f9eb55fb93c91bd21e22837";
-          sha256 = "06dc06yli4g5yr8fb9sdpqbhiaff37g977qcsbds9q2mlhnjgfx9";
+          rev = "a6033808790879a17b2729e73747a9ed3fb2264e";
+          sha256 = "05sdgywprwpav62d2bvlb80yd39brxhnmhhl1f116mm9hw5clqia";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -175,11 +175,11 @@ let
 
     "datetime" = pkgs.stdenv.mkDerivation {
         name = "datetime";
-        version = "v5.0.2";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-datetime.git";
-          rev = "e110462829ea656d2bc0924266d4edff222108d4";
-          sha256 = "1mhzn2ymdkzki7wjlr9xrdbngm0886wmfbh2c46flnf9lmfyw54y";
+          rev = "a6a0cf1b0324964ad1854bc3377ed8766ba90e6f";
+          sha256 = "1idjljxy8rjlw3wiypk1c9cc1fc4g9kf7drzdy6a0yjdg7504gad";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -187,11 +187,11 @@ let
 
     "distributive" = pkgs.stdenv.mkDerivation {
         name = "distributive";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-distributive.git";
-          rev = "11f3f87ca5720899e1739cedb58dd6227cae6ad5";
-          sha256 = "0788znmdyh6b1c9pln624ah397l88xmd3fxlxiy3z1qy8bzr4r54";
+          rev = "6005e513642e855ebf6f884d24a35c2803ca252a";
+          sha256 = "0x6cfsx9ff66kvw9l10pxd5vv16r91mmfxrfc68w1xfdfi81lhdx";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -199,11 +199,11 @@ let
 
     "effect" = pkgs.stdenv.mkDerivation {
         name = "effect";
-        version = "v3.0.0";
+        version = "v4.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-effect.git";
-          rev = "985d97bd5721ddcc41304c55a7ca2bb0c0bfdc2a";
-          sha256 = "1n9qr85knvpm4i0qhm8xbgfk46v9y843p76j278phfs9l6aywzsn";
+          rev = "a192ddb923027d426d6ea3d8deb030c9aa7c7dda";
+          sha256 = "0aa10lc6h9mlf4xf3g3ziig7v6kxdqvbh20kma8ay59w0b1bhmj1";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -211,11 +211,11 @@ let
 
     "either" = pkgs.stdenv.mkDerivation {
         name = "either";
-        version = "v5.0.0";
+        version = "v6.1.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-either.git";
-          rev = "c1a1af35684f10eecaf6ac7d38dbf6bd48af2ced";
-          sha256 = "18dk159yyv7vs0xsnh9m5fajd7zy6zw5b2mpyd6nqdh3c6bb9wh6";
+          rev = "af655a04ed2fd694b6688af39ee20d7907ad0763";
+          sha256 = "05zps4klvgmvlm06f4hrycssm8q0pysbqnjsrk26lfvmid6mmg63";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -223,11 +223,11 @@ let
 
     "enums" = pkgs.stdenv.mkDerivation {
         name = "enums";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-enums.git";
-          rev = "170d959644eb99e0025f4ab2e38f5f132fd85fa4";
-          sha256 = "1lci5iy6s6cmh93bpkfcmp0j4n5dnij7dswb0075bk0kzd9xp7rs";
+          rev = "bae47961d401f9acf88da38f32e87403e5f0cf2f";
+          sha256 = "08sl5q07hv6v2008dcpg4mxiqwk9z0fhq67k0bgkxvlbsmar7khg";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -235,11 +235,11 @@ let
 
     "exceptions" = pkgs.stdenv.mkDerivation {
         name = "exceptions";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-exceptions.git";
-          rev = "410d0b8813592bda3c25028540eeb2cda312ddc9";
-          sha256 = "1yjbrx34a0rnxgpvywb63n9jzhkdgb2q2acyzbwh290mrrggc95x";
+          rev = "afab3c07c820bb49b6c5be50049db46a964a6161";
+          sha256 = "04xrbrcjwsv8gj465ygrlqhv1majxmr6m242iazg6apxlr89hgvg";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -247,11 +247,11 @@ let
 
     "exists" = pkgs.stdenv.mkDerivation {
         name = "exists";
-        version = "v5.1.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-exists.git";
-          rev = "c34820f8b2d15be29abdd5097c3d636f5df8f28c";
-          sha256 = "15qp52cpp2yvxihkzfmn6gabyvx5s6iz5lafvqhyfgp4wfnz0bds";
+          rev = "f765b4ace7869c27b9c05949e18c843881f9173b";
+          sha256 = "0xnxi8fsmi15wrpq5d99gg94glk8a45hpx7pf4pmxg5r6rn1vjvx";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -259,11 +259,11 @@ let
 
     "foldable-traversable" = pkgs.stdenv.mkDerivation {
         name = "foldable-traversable";
-        version = "v5.0.1";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-foldable-traversable.git";
-          rev = "d581caf260772b1b446c11ac3c8be807b290b220";
-          sha256 = "182na4np7hk2dqyxywy4jij2csrzx4bz02m6bq8yx1j27hlgjvsd";
+          rev = "b3926f870532d287ea59e2d5cd3873b81ef2a93a";
+          sha256 = "0xg8qvyc6r9wqgy7wnw1rjqljl4wpgdrkxsm5x9rsagj2k5brxip";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -271,11 +271,11 @@ let
 
     "foreign-object" = pkgs.stdenv.mkDerivation {
         name = "foreign-object";
-        version = "v3.0.0";
+        version = "v4.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-foreign-object.git";
-          rev = "c9a7b7bb8bed1b87c5545c4ebe85a70f86c0e6b1";
-          sha256 = "0accw6qd93qqry19rskjgl7y54xi2wd70rglbqyjx6c5ybcjnavr";
+          rev = "28a635827a9a6c251df73f68874070d51fe9f756";
+          sha256 = "0ql0vgndcb5dqaqz81mvrqkrl5c2rlgxpydgdiiaxmmfxvxwi439";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -283,11 +283,11 @@ let
 
     "fork" = pkgs.stdenv.mkDerivation {
         name = "fork";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript-contrib/purescript-fork.git";
-          rev = "153cc29e6e51fb1108368efc622d41d9f80bd707";
-          sha256 = "1hyvaixza8151zbylk2kv859x48yyhla536lcjghcwd62vzfwmdn";
+          rev = "a5c3bc6f357e97669e8c29c6f79f5f55be0d42c0";
+          sha256 = "0yzh55vfrhrr660ni3sbbljypjirbka5jlks4zibqmhwrmy3wnj9";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -295,11 +295,11 @@ let
 
     "free" = pkgs.stdenv.mkDerivation {
         name = "free";
-        version = "v6.0.1";
+        version = "v7.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-free.git";
-          rev = "06e76495397eafe15c9c1273f2ef05e55f1a3ca3";
-          sha256 = "0kpq83qjfjzf1l2f1cnnx36kjwnm5czgjyh2imwp3bna8js6sk39";
+          rev = "e2d8fa8023a864363857834e11393483bced5e38";
+          sha256 = "0gyy0k297m26gw76w7kx8k1zjczlqbqb3nmh2h4gb3r84gl05g6r";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -307,11 +307,11 @@ let
 
     "functions" = pkgs.stdenv.mkDerivation {
         name = "functions";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-functions.git";
-          rev = "691b3345bc2feaf914e5299796c606b6a6bf9ca9";
-          sha256 = "1gnk6xh5x04zcahn82gwp49qpglxd5jkfqn0i58m27jfihvblaxd";
+          rev = "f626f20580483977c5b27a01aac6471e28aff367";
+          sha256 = "1bsf2y8hx103a92yrc6m05q2dv51ckag1srd7q5n9vaf2k9byrj9";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -319,11 +319,11 @@ let
 
     "functors" = pkgs.stdenv.mkDerivation {
         name = "functors";
-        version = "v4.1.1";
+        version = "v5.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-functors.git";
-          rev = "e936f7a8d2ec53a344c478ccada5add93273848c";
-          sha256 = "0i1x14r54758s5jx5d7zy4l07mg6gabljadgybldnbpmdqk6b966";
+          rev = "022ffd7a2a7ec12080314f3d217b400674a247b4";
+          sha256 = "1pnw3r1nk0rx8mrw3ajjml40zvx9v26qrqwj77pz7hpwxigxfbff";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -331,11 +331,11 @@ let
 
     "gen" = pkgs.stdenv.mkDerivation {
         name = "gen";
-        version = "v3.0.0";
+        version = "v4.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-gen.git";
-          rev = "85c369f56545a3de834b7e7475a56bc9193bb4b4";
-          sha256 = "1h396rqn1fc2c155i58vnaksqjrpajly128ah6wq1w426vwr1vrf";
+          rev = "9fbcc2a1261c32e30d79c5418edef4d96fe76931";
+          sha256 = "0kajzcp9a8dmqvb3ga27hlf18m2smbp98a0bmzzb9vv156ckw0b4";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -343,11 +343,11 @@ let
 
     "identity" = pkgs.stdenv.mkDerivation {
         name = "identity";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-identity.git";
-          rev = "5c150ac5ee4fa6f145932f6322a1020463dae8e9";
-          sha256 = "0a58y71ihvb5b7plnn2sxsbphqzd9nzfafak4d5a576agn76q0ql";
+          rev = "ef6768f8a52ab0bc943a85f5761ba07c257f639f";
+          sha256 = "1lh0pkwwdyd8q9bgf4l1m96gdnardki4r2s359cnhrwp94b43fyr";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -355,11 +355,11 @@ let
 
     "integers" = pkgs.stdenv.mkDerivation {
         name = "integers";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-integers.git";
-          rev = "8a783f2d92596c43afca53066ac18eb389d15981";
-          sha256 = "1rrygw0ai61brnvgap7dfhdzacyhg5439pz6yrmmyg32cvf0znhv";
+          rev = "54d712b25c594833083d15dc9ff2418eb9c52822";
+          sha256 = "04j9sqvkgyxxvbm8jfc2118wzmgswn8jva9fysgbsnmsg9vcxfm6";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -367,11 +367,11 @@ let
 
     "invariant" = pkgs.stdenv.mkDerivation {
         name = "invariant";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-invariant.git";
-          rev = "c421b49dec7a1511073bb408a08bdd8c9d17d7b1";
-          sha256 = "0vwkbh7kv00g50xjgvxc0mv5b99mrj6q0sxznxwk32hb9hkbhy5l";
+          rev = "1d2a196d51e90623adb88496c2cfd759c6736894";
+          sha256 = "07rqag47ykdiqc5yfbc1a64ijaqliljhcw1vgbv81m7ljzzd2xna";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -379,11 +379,11 @@ let
 
     "lazy" = pkgs.stdenv.mkDerivation {
         name = "lazy";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-lazy.git";
-          rev = "2f73f61e7ac1ae1cfe05564112e3313530e673ff";
-          sha256 = "1wxfx019911gbkifq266hgn67zwm89pxhi83bai77mva5n9j3f6l";
+          rev = "48347841226b27af5205a1a8ec71e27a93ce86fd";
+          sha256 = "0dxlc3b2bdqsri45i7a9bvwvv0gg43cc1gq61zi41f290a29ny2q";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -391,23 +391,11 @@ let
 
     "lists" = pkgs.stdenv.mkDerivation {
         name = "lists";
-        version = "v6.0.1";
+        version = "v7.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-lists.git";
-          rev = "6383c4f202b3f69474f9f7da182c2d42fcc3111c";
-          sha256 = "0xmg918s3mqvfvwgjfqcs1yvcz6hy2n7h3ygqz2iyvk868gz25qs";
-        };
-        phases = "installPhase";
-        installPhase = "ln -s $src $out";
-      };
-
-    "math" = pkgs.stdenv.mkDerivation {
-        name = "math";
-        version = "v3.0.0";
-        src = pkgs.fetchgit {
-          url = "https://github.com/purescript/purescript-math.git";
-          rev = "59746cc74e23fb1f04e09342884c5d1e3943a04f";
-          sha256 = "0hkf0vyiga21992d9vbvdbnzdkvgljmsi497jjas1rk3vhblx8sq";
+          rev = "b113451e5b41cad87d669a3165f955c71cd863e2";
+          sha256 = "1mg7vy44k8jlqkri7x4ikciixx92b17wi35887x09dwdsicjf0sx";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -415,11 +403,11 @@ let
 
     "maybe" = pkgs.stdenv.mkDerivation {
         name = "maybe";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-maybe.git";
-          rev = "8e96ca0187208e78e8df6a464c281850e5c9400c";
-          sha256 = "0vyk3r9gklvv7awzpph7ra53zxxbin1ngmqflb5vvr2365v5xyqy";
+          rev = "c6f98ac1088766287106c5d9c8e30e7648d36786";
+          sha256 = "0n33g8c579vcs06ii0r7f14jjdwzjw7p583w4nmrv9h442q2cvlz";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -427,11 +415,11 @@ let
 
     "mmorph" = pkgs.stdenv.mkDerivation {
         name = "mmorph";
-        version = "v6.0.0";
+        version = "v7.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/Thimoteus/purescript-mmorph.git";
-          rev = "ebe16afbfa16dd600f3379ccedc7529417402393";
-          sha256 = "0ds88hray8v0519n9k546qsc4qs8bj1k5h5az7nwfp0gaq0r5wpk";
+          rev = "94bc558ac34184d5236a7a9b2463dcc7551ced8e";
+          sha256 = "0m3m1kjy4i9lwzj8l5qlafxawyhbdxj035wa5ys4j8v4013a92xg";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -439,11 +427,11 @@ let
 
     "newtype" = pkgs.stdenv.mkDerivation {
         name = "newtype";
-        version = "v4.0.0";
+        version = "v5.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-newtype.git";
-          rev = "7b292fcd2ac7c4a25d7a7a8d3387d0ee7de89b13";
-          sha256 = "1fgzbxslckva2psn0sia30hfakx8xchz3wx2kkh3w8rr4nn2py8v";
+          rev = "29d8e6dd77aec2c975c948364ec3faf26e14ee7b";
+          sha256 = "0kfc644zn2f9rpx8fy4gjvmz04k9mv1c2xrqis8m3s0ydnhbffd7";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -451,11 +439,11 @@ let
 
     "nonempty" = pkgs.stdenv.mkDerivation {
         name = "nonempty";
-        version = "v6.0.0";
+        version = "v7.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-nonempty.git";
-          rev = "d3e91e3d6e06e5bdcc5b2c21c8e5d0f9b946bb9e";
-          sha256 = "0azk1jrpqnjf2i97lcp63wcm31c4hddklp1mfmdan27zap3zqyjm";
+          rev = "28150ecc7419238b187abd609a92a645273348bb";
+          sha256 = "1mwdc2sny2ygp67kyk7h2493vq7syf7j18s3d9a5gwf1y7jlf7gh";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -463,11 +451,23 @@ let
 
     "now" = pkgs.stdenv.mkDerivation {
         name = "now";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript-contrib/purescript-now.git";
-          rev = "4c994dae8bb650787de1e4d9e709f2565fb354fb";
-          sha256 = "1wa4j2h5rlw1lgfpm7rif3v6ksm8lplxl1x69zpk8hdf0cfyz4qm";
+          rev = "b5ffed2381e5fefc063f484e607e8499e79eaf32";
+          sha256 = "01khmqs4iz7dhlvd43zxj19q0c0vvqf1m128vgvgxz5mv430zfgr";
+        };
+        phases = "installPhase";
+        installPhase = "ln -s $src $out";
+      };
+
+    "nullable" = pkgs.stdenv.mkDerivation {
+        name = "nullable";
+        version = "v6.0.0";
+        src = pkgs.fetchgit {
+          url = "https://github.com/purescript-contrib/purescript-nullable.git";
+          rev = "3202744c6c65e8d1fbba7f4256a1c482078e7fb5";
+          sha256 = "10s3b54pjmr2rxlyzvc8yc99k1dpn0qrijnc4y65yj5z6bxf2791";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -475,11 +475,11 @@ let
 
     "numbers" = pkgs.stdenv.mkDerivation {
         name = "numbers";
-        version = "v8.0.0";
+        version = "v9.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-numbers.git";
-          rev = "f5bbd96cbed58403c4445bd4c73df50fc8d86f46";
-          sha256 = "00pm2x4kh4fm91r7nmik1v5jclkgh7gpxz13ambyqxbxbiqjq0vg";
+          rev = "2a53528f18f9415334bae28e7bb3cf3be86342c2";
+          sha256 = "1h4v6ir1hq6gvkk0kla38vlcd6bv73xkc8pv71jygwqxrdwfxxgw";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -487,11 +487,11 @@ let
 
     "ordered-collections" = pkgs.stdenv.mkDerivation {
         name = "ordered-collections";
-        version = "v2.0.1";
+        version = "v3.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-ordered-collections.git";
-          rev = "f226bdf904a153746bda6b928fb32fb25bb2a319";
-          sha256 = "1p592g0s07c56639y71782af0zz5cndpjxd5w9n41hdszsz1b86h";
+          rev = "9826b7632d0d0a691173bde308a634195f42a419";
+          sha256 = "1wk8mcn1zsxi0yk9ybas2v7m0drb492806gld1xxxic8x1i19ws0";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -499,11 +499,11 @@ let
 
     "orders" = pkgs.stdenv.mkDerivation {
         name = "orders";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-orders.git";
-          rev = "c25b7075426cf82bcb960495f28d2541c9a75510";
-          sha256 = "0wwy3ycjll0s590ra35zf5gjvs86w97rln09bj428axhg7cvfl0a";
+          rev = "f86db621ec5eef1274145f8b1fd8ebbfe0ed4a2c";
+          sha256 = "14fjls3v14ia6fr2w4p0i5dqv10zk343wg28m4c77a17jmvbs9r4";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -511,11 +511,11 @@ let
 
     "parallel" = pkgs.stdenv.mkDerivation {
         name = "parallel";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-parallel.git";
-          rev = "16b38a2e148639b04ae67e0ce63cc220da8857f7";
-          sha256 = "0x8mvhgs8ygqj34xgyhk6gixqm32p2ymm00zg0zdw13g3lil9p4x";
+          rev = "85290dca837771ac4870071008c933d315ef678f";
+          sha256 = "0bpwvzq4dn7vx5mfj12w1zvvnamc6w2c45c2v54b9yw36snnwpcf";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -523,11 +523,11 @@ let
 
     "parsing" = pkgs.stdenv.mkDerivation {
         name = "parsing";
-        version = "v7.0.0";
+        version = "v9.1.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript-contrib/purescript-parsing.git";
-          rev = "297ad9e88cba9ddda70a249f468b6972477f097f";
-          sha256 = "0a5yypqg9hn0pz51jws1qzzxm1yr684icmyppnb3yqdv6wsz7zg2";
+          rev = "44ef16b7cfb7cedc3d518c00ef10c6cb73ff4fc8";
+          sha256 = "1wkk3p1w2k1cvby4airyxgavk1djfzvzc2ch6b8951b592rj8lkr";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -535,11 +535,11 @@ let
 
     "partial" = pkgs.stdenv.mkDerivation {
         name = "partial";
-        version = "v3.0.0";
+        version = "v4.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-partial.git";
-          rev = "2f0a5239efab68179a684603263bcec8f1489b08";
-          sha256 = "0acxf686hvaj793hyb7kfn9lf96kv3nk0lls2p9j095ylp55sldb";
+          rev = "0fa0646f5ea1ec5f0c46dcbd770c705a6c9ad3ec";
+          sha256 = "04s1h0r3slyd8kcamhqqrr6piksl9y76nmf2418j0ifhp16qwxmm";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -547,11 +547,11 @@ let
 
     "pipes" = pkgs.stdenv.mkDerivation {
         name = "pipes";
-        version = "v7.0.1";
+        version = "v8.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/felixschl/purescript-pipes.git";
-          rev = "42e43f0961ad0fc3f1cef6986fe23ca9f48f6dda";
-          sha256 = "0jzgzi34wqqdcfgznbpfv4b8al2prd36yshnndlvkqfv70smx3kh";
+          rev = "e3bdc0b0db0a67e89a717b6118b23e78a380e23f";
+          sha256 = "1jz3bfbl8b0hgbcm9y98bv2z29b072v1k8snp19vb2xql1zd40sx";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -559,11 +559,11 @@ let
 
     "prelude" = pkgs.stdenv.mkDerivation {
         name = "prelude";
-        version = "v5.0.1";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-prelude.git";
-          rev = "68f8012bc2309d9bf5832cdf7316ad052d586905";
-          sha256 = "1x0cacvv9mmw80vy6f40y0p959q1dz28fwjswhyd7ws6npbklcy0";
+          rev = "32787f4399c92459c41602131a5858559eb868c5";
+          sha256 = "0jkbckxw2640gmfi2f8bpf2zwnay2dxy8n24rvxl3w3dihcgd9qc";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -571,11 +571,11 @@ let
 
     "profunctor" = pkgs.stdenv.mkDerivation {
         name = "profunctor";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-profunctor.git";
-          rev = "4551b8e437a00268cc9b687cbe691d75e812e82b";
-          sha256 = "0fvd2xiv77sp4jd4spgdp4i9812p6pdzzbg4pa96mbr0h19jf39c";
+          rev = "0a966a14e7b0c827d44657dc1710cdc712d2e034";
+          sha256 = "07rhk8micbc74my6s53xbj2smvvwah2w1drqrcmcnncxdks3lqg3";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -583,11 +583,11 @@ let
 
     "profunctor-lenses" = pkgs.stdenv.mkDerivation {
         name = "profunctor-lenses";
-        version = "v7.0.1";
+        version = "v8.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript-contrib/purescript-profunctor-lenses.git";
-          rev = "9c3d87a6dab8eb785a93bff11aa183796dc93183";
-          sha256 = "1wknj7g6vwk2ga1rq57l470h322308ddjn5bd3x2hhfkiy039kc3";
+          rev = "973d567afe458fd802cf4f0d9725b6dc35ad9297";
+          sha256 = "0axz7nznn12iqh6sn9qjg6i8qglpdsqgkp30ndwdj98czcnbnybv";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -595,11 +595,11 @@ let
 
     "psci-support" = pkgs.stdenv.mkDerivation {
         name = "psci-support";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-psci-support.git";
-          rev = "f26fe8266a63494080476333e22f971404ea8846";
-          sha256 = "16vhf8hapd7rcgmafmjpiq7smhzdh3300f2idk1q4kk01yxn8ddj";
+          rev = "897cdb543548cb6078d69b6413b54841404eda72";
+          sha256 = "1ix53r8avkn3fw72mngwzw7v6c6mv7j4miw5mrgjrh9hb8p2ydl1";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -607,11 +607,11 @@ let
 
     "record" = pkgs.stdenv.mkDerivation {
         name = "record";
-        version = "v3.0.0";
+        version = "v4.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-record.git";
-          rev = "091495d61fcaa9d8d8232e7b800f403a3165a38f";
-          sha256 = "0yidfvwiajiv8xflfsi2p8dqnp0qmmcz9jry58jyn9ga82z2pqn6";
+          rev = "c89cd1ada6b636692571fc374196b1c39c4c9f70";
+          sha256 = "1g7s2h1as5cz824wpm0jhjprrh66shha5i4gq37q73yw0s5p2ahm";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -619,11 +619,11 @@ let
 
     "refs" = pkgs.stdenv.mkDerivation {
         name = "refs";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-refs.git";
-          rev = "f66d3cdf6a6bf4510e5181b3fac215054d8f1e2e";
-          sha256 = "1jhc2v784jy8bvkqy4zsh2z7pnqrhwa8n5kx98xhxx73n1bf38sg";
+          rev = "f8e6216da4cb9309fde1f20cd6f69ac3a3b7f9e8";
+          sha256 = "09bvfxhjfwfwv55py45s71maazwrr68k0rk4v8ynfqv91h34319h";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -631,11 +631,11 @@ let
 
     "safe-coerce" = pkgs.stdenv.mkDerivation {
         name = "safe-coerce";
-        version = "v1.0.0";
+        version = "v2.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-safe-coerce.git";
-          rev = "e719defd227d932da067a1f0d62a60b3d3ff3637";
-          sha256 = "0m942lc23317izspz1sxw957mwl9yb9bgk8dh23f7b3a8w9hh8ff";
+          rev = "7fa799ae80a38b8d948efcb52608e58e198b3da7";
+          sha256 = "00m4l733gpl0153cbl6n5kly7jr8ids399apza2rbczif40brp9g";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -643,11 +643,11 @@ let
 
     "spec" = pkgs.stdenv.mkDerivation {
         name = "spec";
-        version = "v5.0.1";
+        version = "v7.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript-spec/purescript-spec.git";
-          rev = "2cfa11573dbb695c117efce0a8f76a3daba12e87";
-          sha256 = "0hpca1sa738029ww74zpw31br5x339q35kzb10iqd55lp6611k80";
+          rev = "e7d976e3562e0d0c1d3b4cf51fb9b53957a8e157";
+          sha256 = "1l70bidnscfsaj9fsfl7vxslp7sl633273ijm9219cjsrnhm55ky";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -655,11 +655,11 @@ let
 
     "st" = pkgs.stdenv.mkDerivation {
         name = "st";
-        version = "v5.0.1";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-st.git";
-          rev = "994eb5e650f3caedac385dcc61694f691df57983";
-          sha256 = "14hz254f1y0k3v83z719np0ddrgbca0hdsd9dvv244i07vlvm2zj";
+          rev = "2cc7ae1c3318a303378c4a9f3fa0f10ee7cc3589";
+          sha256 = "1ykk27zn03svfsv2s1mf88d6x3q6qhb9bwjzgals79krw8w0aiyl";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -667,11 +667,11 @@ let
 
     "strings" = pkgs.stdenv.mkDerivation {
         name = "strings";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-strings.git";
-          rev = "157e372a23e4becd594d7e7bff6f372a6f63dd82";
-          sha256 = "0hyaa4d8gyyvac2nxnwqkn2rvi5vax4bi4yv10mpk7rgb8rv7mb8";
+          rev = "4bc6954448d056f8aa7a659695a6ad60ad4fdf19";
+          sha256 = "101va3rawcn5inp20krfg192bbjbvm27xfzwwc1inb2ya0m98amg";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -679,11 +679,11 @@ let
 
     "tailrec" = pkgs.stdenv.mkDerivation {
         name = "tailrec";
-        version = "v5.0.1";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-tailrec.git";
-          rev = "5fbf0ac05dc6ab1a228b2897630195eb7483b962";
-          sha256 = "1jjl2q2hyhjcdxpamzr1cdlxhmq2bl170x5p3jajb9zgwkqx0x22";
+          rev = "5e2104aa734b31a17074cc805bf087d72b65afd1";
+          sha256 = "0vc3dpsd2xxz694zlm75nx1cn6c6f29nzkb8xlxkk6ydw3wpsk3w";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -691,11 +691,11 @@ let
 
     "transformers" = pkgs.stdenv.mkDerivation {
         name = "transformers";
-        version = "v5.2.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-transformers.git";
-          rev = "1e5d4193b38c613c97ea1ebdb721c6b94cd8c50a";
-          sha256 = "0lggimnq016v98ib6h68gnciraambxrfqm2s033wm34srcy8xs06";
+          rev = "be72ab52357d9a665cbf93d73ba1c07c4b0957ee";
+          sha256 = "0ijrdsppl8vx0rlbwc9p0vjbmvwlcy4ia7xymvk6y34zbxzjlzm6";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -703,11 +703,11 @@ let
 
     "tuples" = pkgs.stdenv.mkDerivation {
         name = "tuples";
-        version = "v6.0.1";
+        version = "v7.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-tuples.git";
-          rev = "d4fe8ffe9e8c512111ee0bc18a6ba0fd056a6773";
-          sha256 = "0s2ar2gih4r34km8r8dqngh21s8899yb93mb7mips08ndy3ajq3a";
+          rev = "4f52da2729b448c8564369378f1232d8d2dc1d8b";
+          sha256 = "1m1ng0xxicb73945jymcl1hn2y2hmynlnmhb2k0kkn1jrjwgcc3d";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -715,11 +715,11 @@ let
 
     "type-equality" = pkgs.stdenv.mkDerivation {
         name = "type-equality";
-        version = "v4.0.0";
+        version = "v4.0.1";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-type-equality.git";
-          rev = "f7644468f22ed267a15d398173d234fa6f45e2e0";
-          sha256 = "126pg4zg3bsrn8dzvv75xp586nznxyswzgjlr7cag3ij3j1z0kl0";
+          rev = "0525b7d39e0fbd81b4209518139fb8ab02695774";
+          sha256 = "1ass38jdycsjisdimdc4drg2w8vkkwp6lkvz3kvy7q0h98vdmlbr";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -727,11 +727,11 @@ let
 
     "typelevel-prelude" = pkgs.stdenv.mkDerivation {
         name = "typelevel-prelude";
-        version = "v6.0.0";
+        version = "v7.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-typelevel-prelude.git";
-          rev = "83ddcdb23d06c8d5ea6196596a70438f42cd4afd";
-          sha256 = "1vwf3yhn8mir5y41wvlyszkgd5fxvrcyfd0l8cn20c8vfq36yzgk";
+          rev = "dca2fe3c8cfd5527d4fe70c4bedfda30148405bf";
+          sha256 = "0x86mrg33kpnrnsfp4p3c92j5lpyqzy87bxdynwf7smk3inqr2jc";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -739,11 +739,11 @@ let
 
     "unfoldable" = pkgs.stdenv.mkDerivation {
         name = "unfoldable";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-unfoldable.git";
-          rev = "bbcc2b062b9b7d3d61f123cfb32cc8c7fb811aa6";
-          sha256 = "1v3bz04wj6hj7s6mcf49hajylg6w58n78q54sqi2ra2zq8h99kpw";
+          rev = "493dfe04ed590e20d8f69079df2f58486882748d";
+          sha256 = "15z2k639ph8wdkrc2y838m5am1z7szw2vqymmv021skzisyn7zwf";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -751,11 +751,11 @@ let
 
     "unicode" = pkgs.stdenv.mkDerivation {
         name = "unicode";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript-contrib/purescript-unicode.git";
-          rev = "8e360802e31d080dec7f3ddf4d3329c56773490f";
-          sha256 = "0sqvgl3il2rl3zxkbzsqb19wib108zvyw73jxiavpfdm6hdmnxvc";
+          rev = "6454d59d9e1fd1bc5a72e80e985d8282022a567a";
+          sha256 = "0w2gsmqcy7pj5vd22qzpig20bdgzmbagyqxrg9mm1njjfsmcm8cv";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -763,11 +763,11 @@ let
 
     "unsafe-coerce" = pkgs.stdenv.mkDerivation {
         name = "unsafe-coerce";
-        version = "v5.0.0";
+        version = "v6.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/purescript/purescript-unsafe-coerce.git";
-          rev = "ee24f0d3b94bf925d9c50fcc2b449579580178c0";
-          sha256 = "0l2agnm1k910v4yp1hz19wrsrywsr5scb397762y7pigm3frzs8r";
+          rev = "ab956f82e66e633f647fb3098e8ddd3ec58d689f";
+          sha256 = "0r6d3dx8jalfzvrvkagz9v05yxwkkhgbzlpswg4w1cyl03zjcla4";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
