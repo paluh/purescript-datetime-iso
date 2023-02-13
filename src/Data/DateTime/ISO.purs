@@ -1,4 +1,4 @@
-module Data.DateTime.ISO (ISO(..), unwrapISO) where
+module Data.DateTime.ISO (parseISODate, parseISOTime, ISO(..), unwrapISO) where
 
 import Prelude
 
